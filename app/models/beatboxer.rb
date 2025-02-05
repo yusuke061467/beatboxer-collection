@@ -1,0 +1,2 @@
+class Beatboxer < ApplicationRecord
+end
