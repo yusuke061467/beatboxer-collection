@@ -13,7 +13,7 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
 RUN mkdir /testapp
 WORKDIR /testapp
 COPY Gemfile /testapp/
-# COPY Gemfile.lock /testapp/
+COPY Gemfile.lock /testapp/
 RUN bundle install
 # COPY package.json yarn.lock ./
 # COPY package.json ./
@@ -22,7 +22,7 @@ COPY . .
 
 RUN yarn install --check-files
 
-RUN echo "Dockerfile.lock created" > Dockerfile.lock
+# RUN echo "Dockerfile.lock created" > Dockerfile.lock
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
 # Dockerイメージ内のコンテナが起動されたときに自動的に実行されるデフォルトのコマンドを指定するためのDockerfileの命令
