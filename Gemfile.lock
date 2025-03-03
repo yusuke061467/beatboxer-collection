@@ -373,6 +373,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2025.1)
+      tzinfo (>= 1.0.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
@@ -395,6 +397,7 @@ GEM
     zeitwerk (2.7.2)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
@@ -429,4 +432,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.4.19
+   2.3.26
