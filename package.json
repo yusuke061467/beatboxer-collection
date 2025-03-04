@@ -1,0 +1,13 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yusuke061467/beatboxer-collection.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+  },
+  "dependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
