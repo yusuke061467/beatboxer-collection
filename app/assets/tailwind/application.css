@@ -1,2 +1,2 @@
 @import "tailwindcss";
-@import "https://cdn.jsdelivr.net/npm/daisyui@5";
+@plugin "daisyui";

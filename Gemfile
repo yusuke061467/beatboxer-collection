@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "= 4.0.0"
+
+gem "watchman", "~> 0.1.1"
