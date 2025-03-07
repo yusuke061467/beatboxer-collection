@@ -2,9 +2,27 @@
   "name": "testapp",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/yusuke061467/beatboxer-collection.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusuke061467/beatboxer-collection.git"
+  },
   "license": "MIT",
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
-  }
+    "build:css": "tailwindcss -i ./app/assets/tailwind/application.css -o ./app/assets/builds/tailwind.css --minify"
+  },
+  "description": "<<<<<<< HEAD\r # README",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "daisyui": "^5.0.0",
+    "esbuild": "^0.25.0"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/yusuke061467/beatboxer-collection/issues"
+  },
+  "homepage": "https://github.com/yusuke061467/beatboxer-collection#readme"
 }

@@ -183,6 +183,8 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.4)
@@ -392,6 +394,8 @@ GEM
     uri (1.0.3)
     useragent (0.16.11)
     version_gem (1.1.6)
+    watchman (0.1.1)
+      mechanize (= 1.0.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -440,6 +444,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  watchman (~> 0.1.1)
   web-console
 
 BUNDLED WITH
