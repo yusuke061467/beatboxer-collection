@@ -1,5 +1,4 @@
 FROM ruby:3.2.3
-# ベースにするイメージを指定
 
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
@@ -16,11 +15,9 @@ COPY Gemfile /testapp/
 COPY Gemfile.lock /testapp/
 RUN bundle install
 # COPY package.json yarn.lock ./
-# COPY package.json ./
-# RUN yarn install
+COPY package.json ./
+RUN yarn install
 COPY . .
-
-RUN yarn install --check-files
 
 # RUN echo "Dockerfile.lock created" > Dockerfile.lock
 
