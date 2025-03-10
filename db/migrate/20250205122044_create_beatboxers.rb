@@ -1,7 +1,7 @@
-class CreateBeatboxers < ActiveRecord::Migration[8.0]
+class CreateBeatboxers < ActiveRecord::Migration[4.2]
   def change
     create_table :beatboxers do |t|
-      t.string :name, null false
+      t.string :name, null: false
       t.string :country, null:false
       t.string :style, null:false
       t.string :achievements
