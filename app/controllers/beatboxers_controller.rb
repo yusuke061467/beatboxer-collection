@@ -10,4 +10,13 @@ class BeatboxersController < ApplicationController
 
   def edit
   end
+
+  def destroy
+  end
+
+  def create
+  end
+
+  def update
+  end
 end

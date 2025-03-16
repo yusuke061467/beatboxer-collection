@@ -1,30 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe "Beatboxers", type: :request do
+RSpec.describe "Bookmarks", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/beatboxers/index"
+      get "/bookmarks/index"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /new" do
+  describe "GET /create" do
     it "returns http success" do
-      get "/beatboxers/new"
+      get "/bookmarks/create"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /show" do
+  describe "GET /destroy" do
     it "returns http success" do
-      get "/beatboxers/show"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /edit" do
-    it "returns http success" do
-      get "/beatboxers/edit"
+      get "/bookmarks/destroy"
       expect(response).to have_http_status(:success)
     end
   end
