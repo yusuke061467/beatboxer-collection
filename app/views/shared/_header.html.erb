@@ -1,0 +1,18 @@
+<header>
+    <div class="navbar bg-base-content text-primary-content" style="height: 140px;">
+        <!--ヘッダー左サイドのブロック-->
+        <div class="navbar-start">
+        </div>
+
+        <!--ヘッダーのセンターのブロック-->
+        <div class="navbar-center">
+            <%= image_tag 'tittle.png', class:"w-90 h-auto" %>
+        </div>
+
+        <!--ヘッダーの右サイドのブロック-->
+        <div class="navbar-end">
+            <%= link_to "ユーザー登録", new_user_path, class: "btn btn-secondary btn-lg", style: "margin-right: 10px;"%>
+            <%= link_to "ログイン", "", class: "btn btn-secondary btn-lg"%>
+        </div>
+    </div>
+</header>

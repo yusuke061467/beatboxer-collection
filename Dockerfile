@@ -12,7 +12,7 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
 RUN mkdir /testapp
 WORKDIR /testapp
 COPY Gemfile /testapp/
-COPY Gemfile.lock /testapp/
+# COPY Gemfile.lock /testapp/
 RUN bundle install
 # COPY package.json yarn.lock ./
 COPY package.json ./

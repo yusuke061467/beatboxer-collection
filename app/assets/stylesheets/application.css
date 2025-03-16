@@ -2,3 +2,10 @@
  *= require_tree .
  *= require_self
  */
+
+#logo {
+    width: 240px;
+    height: 200px;
+    border: 1px dashed #333333;
+    display: inline;
+}
