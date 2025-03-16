@@ -1,5 +1,7 @@
 <%= render 'shared/header' %>
 
+<body>
+
 <h1 class="text-3xl font-bold underline">
     Beatboxers index
 </h1>
@@ -23,3 +25,7 @@
 <%= link_to "ユーザー登録ボタン", new_user_path, class: "btn btn-neutral"%>
 <%= link_to "新規投稿", new_beatboxer_path, class: "btn btn-neutral"%>
 <%= link_to "ブックマークボタン", bookmarks_path, class: "btn btn-active btn-secondary" %>
+
+</body>
+
+<%= render 'shared/footer' %>

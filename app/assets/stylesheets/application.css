@@ -3,9 +3,13 @@
  *= require_self
  */
 
-#logo {
-    width: 240px;
-    height: 200px;
-    border: 1px dashed #333333;
-    display: inline;
+body{
+    background-image: url(background_image.jpg);
+    height: 800px;
+    background-size:cover;
+  }
+
+footer{
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
 }
