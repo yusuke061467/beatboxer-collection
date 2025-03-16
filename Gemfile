@@ -75,7 +75,7 @@ gem "watchman", "~> 0.1.1"
 
 # webrickをインストールしないとエラーが発生する(Load error: cannot load such file – webrick)
 # ※自身のケースではiconvも必要
-#https://talk.jekyllrb.com/t/load-error-cannot-load-such-file-webrick/5417/6
+# https://talk.jekyllrb.com/t/load-error-cannot-load-such-file-webrick/5417/6
 gem "webrick", "~> 1.9"
 
 gem "iconv", "~> 1.1"
