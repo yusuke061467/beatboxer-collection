@@ -9,6 +9,8 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
   && apt-get update -qq \
   && apt-get install -y nodejs yarn
 
+RUN apt-get update -qq && apt-get install -y postgresql-client
+
 RUN mkdir /testapp
 WORKDIR /testapp
 COPY Gemfile /testapp/
