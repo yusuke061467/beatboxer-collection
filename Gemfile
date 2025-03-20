@@ -69,7 +69,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-rails", "= 4.0.0"
+gem "tailwindcss-rails", "4.2.1"
 
 gem "watchman", "~> 0.1.1"
 
