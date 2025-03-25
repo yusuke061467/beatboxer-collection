@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root to: "beatboxers#index"
   # root "posts#index"
 
-  resources :users, only: %i[new create destroy]
+  resources :users, only: %i[new create destroy edit update]
   resources :comments, only: %i[create destroy]
   resources :bookmarks, only: %i[index create destroy]
   resources :youtube_videos, only: %i[create destroy]
