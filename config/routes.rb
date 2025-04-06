@@ -19,8 +19,7 @@ Rails.application.routes.draw do
   resources :youtube_videos, only: %i[create destroy]
   resources :beatboxers
 
-  get 'login', to: 'user_sessions#new'
-  post 'login', to: 'user_sessions#create'
-  delete 'logout', to: 'user_sessions#destroy'  
-
+  get "login", to: "user_sessions#new"
+  post "login", to: "user_sessions#create"
+  delete "logout", to: "user_sessions#destroy"
 end

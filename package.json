@@ -16,6 +16,8 @@
     "test": "test"
   },
   "dependencies": {
+    "@hotwired/turbo": "^8.0.13",
+    "@hotwired/turbo-rails": "^8.0.13",
     "daisyui": "^5.0.0",
     "esbuild": "^0.25.0"
   },
