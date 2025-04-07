@@ -1,7 +1,5 @@
 class AddAndDelete < ActiveRecord::Migration[7.2]
   def change
-    drop_table :youtube_videos
-
     create_table :posts do |t|
       t.string :title,            null: false
       t.string :youtube_video
