@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create destroy edit update]
   resources :comments, only: %i[create destroy]
   resources :bookmarks, only: %i[index create destroy]
-  resources :youtube_videos, only: %i[create destroy]
   resources :beatboxers
+  resources :posts
 
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
