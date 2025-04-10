@@ -1,0 +1,7 @@
+<div class="mt-8 mb-8 gap-8 flex flex-wrap items-center justify-center self-start min-h-screen">
+    <% if @posts.present? %>
+        <%= render @posts %>
+    <% else %>
+        <div class='text-lg text-center'>投稿がありません</div>
+    <% end %>
+</div>
