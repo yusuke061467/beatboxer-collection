@@ -4,23 +4,13 @@
  */
 
 body{
-    background-image: url(background_image.jpg);
-    height: 800px;
-    background-size:cover;
-  }
-
-footer{
-    position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
+  background-image: url(background_image.jpg);
+  height: full;
+  background-size:cover;
 }
 
 #user-form {
   margin-left: auto;
   margin-right: auto;
   margin-top: 150px;
-}
-
-.post-body {
-  inline-size: 300px;
-  overflow-wrap: break-word;
 }
