@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+    skip_before_action :require_login, only: [ :index ]
+
     def index
-        @posts = Post.all
+        @posts = Post.order(id: :desc).page(params[:page]).per(12)
     end
 
     def show
