@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_07_171228) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_12_181331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,18 +30,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_07_171228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "beatboxer_id"
-    t.index ["beatboxer_id"], name: "index_bookmarks_on_beatboxer_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_bookmarks_on_post_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "body"
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "beatboxer_id"
-    t.index ["beatboxer_id"], name: "index_comments_on_beatboxer_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -68,9 +68,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_07_171228) do
   end
 
   add_foreign_key "beatboxers", "users"
-  add_foreign_key "bookmarks", "beatboxers"
+  add_foreign_key "bookmarks", "posts"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "comments", "beatboxers"
+  add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "beatboxers"
   add_foreign_key "posts", "users"

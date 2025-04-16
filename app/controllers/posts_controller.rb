@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @comment = Comment.new
+        @comments = @post.comments.includes(:user).order(created_at: :desc)
     end
 
     def new
@@ -34,6 +36,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:title, :youtube_video, :body)
+      params.require(:post).permit(:title, :youtube_video, :body).merge(user_id: current_user.id)
     end
 end
