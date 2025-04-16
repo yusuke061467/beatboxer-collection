@@ -2,9 +2,9 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :beatboxers
-  has_many :comments
-  has_many :youtube_videos
-  has_many :bookmarks
+  has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   with_options presence: true do
     validates :name
