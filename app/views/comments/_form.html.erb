@@ -1,0 +1,6 @@
+<fieldset class="fieldset">
+  <%= form_with model:@comment, html: { class: "flex gap-6 items-end" } do |f| %>
+    <%= f.text_field :body, class: "textarea text-xl h-30 w-150 textarea-primary", :placeholder => "入力してください" %>
+    <%= f.submit "投稿", class: "btn btn-lg btn-primary self-end" %>
+  <% end %>
+</fieldset>
