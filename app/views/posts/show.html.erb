@@ -9,17 +9,17 @@
 
     <div class="flex mt-5">
         <div>
-            <p class="border border-red-100 h-22 text-7xl">🎙️</p>
+            <p class="h-22 text-7xl">🎙️</p>
         </div>
         <div class="line-clamp-2 w-full">
-            <h2 class="border border-red-100 h-22 text-4xl font-bold" style="overflow-wrap: break-word;">
+            <h2 class="h-22 text-4xl font-bold" style="overflow-wrap: break-word;">
                 <%= @post.title %>
             </h2>
         </div>
     </div>
 
-    <div class="border border-red-100 mt-5 line-clamp-6">
-        <p class="border border-red-100 h-30 w-full text-2xl opacity-50" style="overflow-wrap: break-word;"><%= @post.body %></p>
+    <div class="mt-5 line-clamp-6">
+        <p class="h-30 w-full text-2xl opacity-50" style="overflow-wrap: break-word;"><%= @post.body %></p>
     </div>
 
     <div class="divider"></div>
@@ -28,6 +28,10 @@
         <h2 class="mb-6 text-lg">コメント欄</h2>
         <div>
             <%= render "comments/form" %>
+        </div>
+
+        <div>
+            <%= render "comments/comments" %>
         </div>
     </div>
 

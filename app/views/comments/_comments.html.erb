@@ -1,0 +1,8 @@
+<% @comments.each do |comment| %>
+    <div class="card bg-base-100 w-1/2 shadow-sm mb-2">
+        <div class="card-body">
+            <h2 class="card-title">ユーザー名</h2>
+            <p><%= comment.body %></p>
+        </div>
+    </div>
+<% end %>
