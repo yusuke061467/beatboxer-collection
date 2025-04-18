@@ -1,0 +1,11 @@
+<%= link_to '編集', edit_user_path, class: 'btn btn-success float-right' %>
+      <table class="table">
+        <tr>
+          <th scope="row">メールアドレス</th>
+          <td><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th scope="row">名前</th>
+          <td><%= current_user.name %></td>
+        </tr>
+      </table>

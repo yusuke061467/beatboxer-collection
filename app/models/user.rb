@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :posts, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   with_options presence: true do
     validates :name
     validates :email
