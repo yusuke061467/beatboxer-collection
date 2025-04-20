@@ -1,0 +1,36 @@
+<%= form_with model: @user, url: profile_path, local: true do |f| %>
+   <div class="flex justify-center">
+      <div class="card bg-base-100 w-96 shadow-sm items-center mt-8 mb-8 gap-3">
+         <figure class="px-10 pt-10">
+            <%= image_tag 'default_profile_image.png', class: "rounded-xl" %>
+         </figure>
+         <div class="fieldset mt-5">
+            <legend class="fieldset-legend">プロフィール画像</legend>
+            <%= f.file_field :avatar, class: 'file-input', accept: 'image/*' %>
+         </div>
+         <div>
+            <legend class="fieldset-legend">ユーザー名</legend>
+            <%= f.text_field :name, :placeholder => current_user.name, class: "input" %>
+         </div>
+            <label class="input validator">
+            <svg class="h-[1.5em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+               <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+               >
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+               </g>
+            </svg>
+            <%= f.email_field :email, :placeholder => current_user.email %>
+            </label>
+            <div class="validator-hint hidden">Enter valid email address</div>
+         <div class="card-actions">
+            <button class="btn btn-primary"><%= f.submit "更新", class: "btn btn-primary"%></button>
+         </div>
+      </div>
+   </div>
+<%end%>
