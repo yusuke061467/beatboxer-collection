@@ -21,4 +21,8 @@ class ProfilesController < ApplicationController
     def set_user
       @user = User.find(current_user.id)
     end
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+    end
 end
