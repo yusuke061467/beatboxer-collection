@@ -1,0 +1,46 @@
+<%= form_with model: @user, url: profile_path, local: true do |f| %>
+   <div class="flex justify-center">
+      <div class="card bg-base-100 w-140 shadow-sm items-center mt-11 mb-11 gap-5 flex flex-col">
+         <div class="mt-8 w-80 h-80 overflow-hidden rounded-xl">
+            <%= image_tag @user.avatar_url, class: "w-80 h-80 object-cover" %>
+         </div>
+         <div class="w-80 flex flex-col">
+            <%= f.label :avatar, "プロフィール画像" %>
+            <%= f.file_field :avatar, class: 'file-input w-full', accept: 'image/*' %>
+         </div>
+         <div class="w-80 flex flex-col">
+            <%= f.label :name, "ユーザー名" %>
+            <%= f.text_field :name, :placeholder => current_user.name, class: "input w-full" %>
+         </div>
+         <div class="w-80 flex flex-col">
+            <%= f.label :email, "メールアドレス" %>
+            <div class="input validator w-full">
+               <svg class="h-[1.5em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                     stroke-linejoin="round"
+                     stroke-linecap="round"
+                     stroke-width="2.5"
+                     fill="none"
+                     stroke="currentColor"
+                  >
+                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </g>
+               </svg>
+               <%= f.email_field :email, :placeholder => current_user.email, class: "align-middle" %>
+            </div>
+         </div>
+         <div class="w-80 flex flex-col">
+            <%= f.label :password, "パスワード" %>
+            <%= f.password_field :password, class: "input w-full" %>
+         </div>
+         <div class="w-80 flex flex-col">
+            <%= f.label :password_confirmation, "パスワード確認用" %>
+            <%= f.password_field :password_confirmation, class: "input w-full" %>
+         </div>
+         <div>
+            <%= f.submit "更新", class: "btn btn-primary mb-8 mt-3"%>
+         </div>
+      </div>
+   </div>
+<%end%>

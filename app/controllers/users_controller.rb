@@ -10,22 +10,16 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      render "new"
+      render :new
     end
   end
 
   def destroy
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
   end
 end
