@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   before_action :require_login
 
   def create
-    # binding.pry
     post = Post.find(params[:post_id])
     comment = Comment.new(comment_params)
     comment.save
@@ -10,6 +9,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
   end
 
   private

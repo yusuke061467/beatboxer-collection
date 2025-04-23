@@ -5,9 +5,12 @@
                 <%= image_tag comment.user.avatar_url, class: "skeleton h-16 w-16 shrink-0 rounded-full" %>
             </div>
             <div class="flex flex-col gap-1 w-5/6">
-                <h2 class="text-lg font-semibold" style="overflow-wrap: break-word;">
-                    <%= comment.user.name %>
-                </h2>
+                <div class="flex flex-row items-start">
+                    <h2 class="text-lg font-semibold line-clamp-2" style="overflow-wrap: break-word;">
+                        <%= comment.user.name %>
+                    </h2>
+                    <%= link_to image_tag("trash_can_icon.svg", class: "mt-2 ml-2 w-5 h-auto"), post_comment_path(@post, comment), method: :delete, data: { turbo_method: :delete } %>
+                </div>
                 <p class="text-sm text-gray-600" style="overflow-wrap: break-word;">
                     <%= comment.body %>
                 </p>
