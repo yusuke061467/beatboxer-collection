@@ -15,7 +15,9 @@
                 <%= post.title %>
             </h2>
         </div>
-        <%= render "bookmark_button", post: post %>
+        <% if current_user %>
+            <%= render "bookmark_button", post: post %>
+        <% end %>
     </div>
     <div class="opacity-50 gap-2 line-clamp-6">
         <p class="h-30 w-full text-sm" style="overflow-wrap: break-word;"><%= post.body %></p>
