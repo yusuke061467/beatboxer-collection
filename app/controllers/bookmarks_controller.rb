@@ -11,8 +11,8 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    @post = Post.find(params[:post_id])
+    # binding.pry
+    @post = current_user.bookmarks.find(params[:id]).post
     current_user.unbookmark(@post)
   end
 end
