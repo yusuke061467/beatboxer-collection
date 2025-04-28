@@ -6,7 +6,7 @@
             <iframe class="skeleton h-50 w-full"  src="https://www.youtube.com/embed/<%= find_youtube_url(post.youtube_video) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% end %>
     </div>
-    <div class="flex mt-3">
+    <div class="flex flex-row relative items-start w-full mt-3">
         <div>
             <p class="h-15 text-3xl">🎙️</p>
         </div>
@@ -15,6 +15,7 @@
                 <%= post.title %>
             </h2>
         </div>
+        <%= render "bookmark_button", post: post %>
     </div>
     <div class="opacity-50 gap-2 line-clamp-6">
         <p class="h-30 w-full text-sm" style="overflow-wrap: break-word;"><%= post.body %></p>
