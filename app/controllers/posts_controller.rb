@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.order(id: :desc).page(params[:page]).per(12)
+      # binding.pry
     end
 
     def show
@@ -16,11 +17,13 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
-        if @post.save
+        post = Post.new(post_params)
+        if post.save
+            flash[:notice] = "投稿しました"
             redirect_to root_path
         else
-            render "new"
+            flash.now[:alert] = "投稿できませんでした"
+            render :new, status: :unprocessable_entity
         end
     end
 

@@ -86,7 +86,7 @@ GEM
     brakeman (7.0.2)
       racc
     builder (3.3.0)
-    bullet (8.0.4)
+    bullet (8.0.5)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (12.0.0)
@@ -108,7 +108,7 @@ GEM
       ssrf_filter (~> 1.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.1)
+    connection_pool (2.5.2)
     crass (1.0.6)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
@@ -132,6 +132,11 @@ GEM
     ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     gretel (5.0.1)
       actionview (>= 6.1)
       railties (>= 6.1)
@@ -204,11 +209,12 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
+    multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     net-http (0.6.0)
       uri
-    net-imap (0.5.6)
+    net-imap (0.5.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -223,7 +229,7 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.4)
-    nokogiri (1.18.7-x86_64-linux-gnu)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (1.1.0)
       oauth-tty (~> 1.0, >= 1.0.1)
@@ -314,6 +320,8 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     rexml (3.4.1)
     rspec-core (3.13.3)
       rspec-support (~> 3.13.0)
@@ -332,7 +340,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.2)
-    rubocop (1.75.2)
+    rubocop (1.75.3)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -389,13 +397,13 @@ GEM
     ssrf_filter (1.2.0)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
-    stringio (3.1.6)
+    stringio (3.1.7)
     tailwindcss-rails (4.0.0)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
-    tailwindcss-ruby (4.1.3-x86_64-linux-gnu)
+    tailwindcss-ruby (4.1.4-x86_64-linux-gnu)
     thor (1.3.2)
-    thruster (0.1.12-x86_64-linux)
+    thruster (0.1.13-x86_64-linux)
     timeout (0.4.3)
     turbo-rails (2.0.13)
       actionpack (>= 7.1.0)
@@ -438,6 +446,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   faker
+  gon
   gretel
   iconv (~> 1.1)
   importmap-rails

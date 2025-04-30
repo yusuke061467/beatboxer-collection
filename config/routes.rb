@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :users, only: %i[new create destroy]
-  resources :bookmarks, only: %i[index create destroy]
   resources :beatboxers
   resources :posts do
     resources :comments, only: %i[create destroy]
   end
+  resources :bookmarks, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 
   get "login", to: "user_sessions#new"
