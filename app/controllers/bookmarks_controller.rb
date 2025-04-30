@@ -5,14 +5,32 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    # binding.pry
     @post = Post.find(params[:post_id])
-    current_user.bookmark(@post)
+
+    respond_to do |format|
+      format.turbo_stream do
+        current_user.bookmark(@post)
+        flash.now[:notice] = "ブックマークを登録しました"
+        render turbo_stream: [
+          turbo_stream.replace("flash-messages", partial: "layouts/flash"),
+          turbo_stream.replace("unbookmark-button-#{@post.id}", partial: "posts/bookmark", locals: { post: @post })
+        ]
+      end
+    end
   end
 
   def destroy
-    # binding.pry
     @post = current_user.bookmarks.find(params[:id]).post
-    current_user.unbookmark(@post)
+
+    respond_to do |format|
+      format.turbo_stream do
+        current_user.unbookmark(@post)
+        flash.now[:notice] = "ブックマークを解除しました"
+        render turbo_stream: [
+          turbo_stream.replace("flash-messages", partial: "layouts/flash"),
+          turbo_stream.replace("bookmark-button-#{@post.id}", partial: "posts/unbookmark", locals: { post: @post })
+        ]
+      end
+    end
   end
 end
