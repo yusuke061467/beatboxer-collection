@@ -39,11 +39,6 @@ gem "sorcery"
 gem "gretel"
 gem "kaminari"
 gem "ransack"
-gem "rubocop"
-gem "bullet"
-gem "rspec-rails"
-gem "pry-byebug"
-gem "faker"
 gem "cssbundling-rails"
 gem "jsbundling-rails"
 gem "carrierwave", "~> 3.0"
@@ -58,6 +53,16 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rubocop"
+
+  gem "faker"
+
+  gem "pry-byebug"
+
+  gem "rspec-rails"
+  
+  gem "bullet"
 end
 
 group :development do
