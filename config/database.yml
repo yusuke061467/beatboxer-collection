@@ -22,7 +22,6 @@ default: &default
   username: postgres
   password: password
   host: db
-  url: <%= ENV['DATABASE_URL'] %>
 
 
 development:
@@ -86,9 +85,10 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: testapp_production
-    username: postgres
+    database: beatboxer-collections-db
+    username: yusuke
     password: <%= ENV["POSTGRES_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *primary_production
     database: testapp_production_cache
