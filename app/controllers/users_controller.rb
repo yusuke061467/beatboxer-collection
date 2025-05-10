@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [ :new, :create ]
+  skip_before_action :require_login, only: [ :new, :create, :activate ]
 
   def new
     @user = User.new
@@ -16,6 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.active!
+      flash[:notice] = "ユーザー登録が完了しました"
+      redirect_to login_path, 
+    else
+      not_authenticated
+    end
   def destroy
   end
 
