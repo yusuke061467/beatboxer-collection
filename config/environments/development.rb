@@ -48,10 +48,13 @@ Rails.application.configure do
       enable_starttls_auto: true,
       address: "smtp.gmail.com",
       port: "587",
-      domain: "smtp.gmail.com",
+      domain: "beatboxer-collection.onrender.com",
       authentication: "plain",
-      user_name: ENV["GMAIL_USERNAME"],
-      password: ENV["GMAIL_PASSWORD"]
+      user_name: "yusukeabe000@gmail.com",
+      password: "884-0102",
+      password: "dfjq gatf ptoy jmix"
+    # user_name: ENV["GMAIL_USERNAME"],
+    # password: ENV["GMAIL_PASSWORD"]
   }
 
   # Print deprecation notices to the Rails logger.

@@ -245,6 +245,8 @@ Rails.application.config.sorcery.configure do |config|
   config.user_config do |user|
     user.user_activation_mailer = UserMailer
 
+    user.prevent_non_active_users_to_login = false
+
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

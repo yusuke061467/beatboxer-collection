@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      flash.now[:success] = "ユーザー登録に成功しました。"
+      flash[:notice] = "仮登録を完了しました。メールアドレスをご確認ください。"
       redirect_to root_path
     else
-      flash.now[:alert] = "ユーザー登録に失敗しました。"
+      flash.now[:alert] = "仮登録に失敗しました。"
       render :new, status: :unprocessable_entity
     end
   end
@@ -20,10 +20,12 @@ class UsersController < ApplicationController
     if (@user = User.load_from_activation_token(params[:id]))
       @user.active!
       flash[:notice] = "ユーザー登録が完了しました"
-      redirect_to login_path, 
+      redirect_to login_path
     else
       not_authenticated
     end
+  end
+
   def destroy
   end
 
