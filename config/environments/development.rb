@@ -1,8 +1,6 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.hosts << "beatboxer-collection.onrender.com"
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Make code changes take effect immediately without server restart.
@@ -48,7 +46,7 @@ Rails.application.configure do
       enable_starttls_auto: true,
       address: "smtp.gmail.com",
       port: "587",
-      domain: "beatboxer-collection.onrender.com",
+      domain: "localhost",
       authentication: "plain",
       user_name: ENV["GMAIL_USERNAME"],
       password: ENV["GMAIL_PASSWORD"],
