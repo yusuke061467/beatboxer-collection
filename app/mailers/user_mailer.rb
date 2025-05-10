@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
   #
   def activation_needed_email(user)
     @user = user
-    @url  = "http://0.0.0.0:3000/users/#{user.activation_token}/activate"
+    @url  = "https://beatboxer-collection.onrender.com/users/#{user.activation_token}/activate"
     mail(to: user.email, subject: "ようこそ、Beatbox Hubへ！")
   end
 
@@ -17,7 +17,7 @@ class UserMailer < ApplicationMailer
   #
   def activation_success_email(user)
     @user = user
-    @url  = "http://0.0.0.0:3000/login"
+    @url  = "https://beatboxer-collection.onrender.com/login"
     mail(to: user.email, subject: "アカウントが作成されました！")
   end
 end

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザー登録が完了しました"
       redirect_to login_path
     else
+      flash.now[:alert] = "ユーザー登録に失敗しました。"
       not_authenticated
     end
   end

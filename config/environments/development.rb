@@ -50,11 +50,9 @@ Rails.application.configure do
       port: "587",
       domain: "beatboxer-collection.onrender.com",
       authentication: "plain",
-      user_name: "yusukeabe000@gmail.com",
-      password: "884-0102",
-      password: "dfjq gatf ptoy jmix"
-    # user_name: ENV["GMAIL_USERNAME"],
-    # password: ENV["GMAIL_PASSWORD"]
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"],
+      password: ENV["GMAIL_APPLICATION_PASSWORD"]
   }
 
   # Print deprecation notices to the Rails logger.
