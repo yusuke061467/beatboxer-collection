@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   root to: "posts#index"
   # root "posts#index"
 
-  resources :users, only: %i[new create destroy]
+  resources :users, only: %i[new create destroy] do
+    member do
+      get :activate
+    end
+  end
   resources :beatboxers
   resources :posts do
     resources :comments, only: %i[create destroy]
