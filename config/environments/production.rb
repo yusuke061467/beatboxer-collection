@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  config.hosts << "beatboxer-collection.onrender.com"
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
@@ -57,7 +57,20 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.default_url_options = { host: "beatboxer-collection.onrender.com" }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+      enable_starttls_auto: true,
+      address: "smtp.gmail.com",
+      port: "587",
+      domain: "beatboxer-collection.onrender.com",
+      authentication: "plain",
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"],
+      password: ENV["GMAIL_APPLICATION_PASSWORD"]
+  }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
