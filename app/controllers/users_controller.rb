@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def activate
-    if (@user = User.load_from_activation_token(params[:id]))
-      @user.update(activation_state: "active")
+    if (user = User.load_from_activation_token(params[:id]))
+      user.update(activation_state: "active")
       flash[:notice] = "ユーザー登録が完了しました"
       redirect_to login_path
     else
