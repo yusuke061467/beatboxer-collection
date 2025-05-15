@@ -1,0 +1,17 @@
+class UserMfaSessionsController < ApplicationController
+  def new
+    @user = current_user
+  end
+
+  def create
+    user = current_user
+    if user.google_authentic?(params[:mfa_code])
+      UserMfaSession.create(user)
+      flash[:alert] = "ログインに成功しました"
+      redirect_to root_path
+    else
+      flash[:alert] = "コードが間違っています"
+      render :new, , status: :unprocessable_entity
+    end
+  end
+end
