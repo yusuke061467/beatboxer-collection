@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login
+  skip_before_action :check_mfa
 
   def new
     @user = User.new
