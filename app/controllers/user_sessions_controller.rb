@@ -1,5 +1,6 @@
 class UserSessionsController < ApplicationController
     skip_before_action :require_login, only: %i[new create]
+    skip_before_action :check_mfa, only: %i[new create destroy]
 
     def new; end
 
@@ -22,6 +23,7 @@ class UserSessionsController < ApplicationController
 
     def destroy
         logout
+        # UserMfaSession.destroy
         flash[:notice] = "ログアウトしました"
         redirect_to root_path, status: :see_other
     end

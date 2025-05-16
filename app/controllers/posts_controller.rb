@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     skip_before_action :require_login, only: [ :index ]
+    skip_before_action :check_mfa, only: [ :index ]
 
     def index
         @posts = Post.order(id: :desc).page(params[:page]).per(12)
