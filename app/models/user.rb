@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  acts_as_google_authenticated drift: 20, issuer: 'beatboxer-collection.onrender.com'
+  acts_as_google_authenticated drift: 20, issuer: "beatboxer-collection.onrender.com"
   after_create do |created_record|
     created_record.set_google_secret
   end
