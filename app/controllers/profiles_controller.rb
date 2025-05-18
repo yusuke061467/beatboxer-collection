@@ -1,27 +1,29 @@
 class ProfilesController < ApplicationController
-    def show
-    end
+  before_action :set_user
 
-    def edit
-    end
+  def show
+  end
 
-    def update
-      if @user.update(user_params)
-        flash.now[:notice] = "ユーザーを更新しました"
-        render :edit, status: :created
-      else
-        flash.now[:alert] = "ユーザーを更新できませんでした"
-        render :edit, status: :unprocessable_entity
-      end
-    end
+  def edit
+  end
 
-    private
-
-    def set_user
-      @user = User.find(current_user.id)
+  def update
+    if @user.update(user_params)
+      flash.now[:notice] = "ユーザーを更新しました"
+      render :edit, status: :created
+    else
+      flash.now[:alert] = "ユーザーを更新できませんでした"
+      render :edit, status: :unprocessable_entity
     end
+  end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
-    end
+  private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+  end
 end

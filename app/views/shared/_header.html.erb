@@ -9,11 +9,14 @@
                 <ul
                     tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 secondary text-base-content">
-                    <li><%= link_to "プロフィール", profile_path %></li> <!--edit_user_path-->
+                    <li><%= link_to "プロフィール", profile_path %></li>
                     <li><%= link_to "ブックマーク", "" %></li>
-                    <div id="nav">
                     <% if current_user %>
+                        <li><%= link_to "新規投稿", new_post_path %></li>
                         <li><%= link_to "ログアウト", logout_path, method: :delete, data: { turbo_method: :delete } %></li>
+                    <% else %>
+                        <li><%= link_to "ユーザー登録", new_user_path %></li>
+                        <li><%= link_to "ログイン", login_path %></li>
                     <% end %>
                 </ul>
             </div>
@@ -21,18 +24,22 @@
 
         <!--ヘッダーのセンターのブロック-->
         <div class="navbar-center">
-            <%= image_tag 'tittle.png', class:"w-90 h-auto" %>
+                <%= link_to root_path do %>
+                    <%= image_tag 'tittle.png', class: "w-75 h-auto md:w-90" %>
+                <% end %>
         </div>
 
         <!--ヘッダーの右サイドのブロック-->
         <div class="navbar-end">
-            <% if current_user %>
-                <%= link_to "新規投稿", new_post_path, class: "btn btn-secondary btn-lg", style: "margin-right: 10px;"%>
-                <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete }, class: "btn btn-secondary btn-lg" %>
-            <% else %>
-                <%= link_to "ユーザー登録", new_user_path, class: "btn btn-secondary btn-lg", style: "margin-right: 10px;"%>
-                <%= link_to "ログイン", login_path, class: "btn btn-secondary btn-lg"%>
-            <% end %>
+            <div class="hidden md:block">
+                <% if current_user %>
+                    <%= link_to "新規投稿", new_post_path, class: "btn btn-secondary btn-lg", style: "margin-right: 10px;"%>
+                    <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete }, class: "btn btn-secondary btn-lg" %>
+                <% else %>
+                    <%= link_to "ユーザー登録", new_user_path, class: "btn btn-secondary btn-lg", style: "margin-right: 10px;"%>
+                    <%= link_to "ログイン", login_path, class: "btn btn-secondary btn-lg"%>
+                <% end %>
+            </div>
         </div>
     </div>
 </header>

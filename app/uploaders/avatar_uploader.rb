@@ -9,7 +9,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   def default_url
-    "default_profile_image"
+    # "default_profile_image"
   end
 
   # Override the directory where uploaded files will be stored.
