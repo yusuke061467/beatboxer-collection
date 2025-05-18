@@ -1,13 +1,23 @@
 <div class="flex justify-center">
   <div class="items-center mt-11 mb-11 gap-8 flex flex-col">
-    <%= image_tag @user.google_qr_uri, class: "skeleton h-42 w-auto" %>
+    <%= image_tag @user.google_qr_uri, class: "skeleton" %>
 
     <%= form_with url: user_mfa_sessions_create_path, method: :get do |f| %>
-      <fieldset class="fieldset w-xs bg-white border border-base-300 p-4 rounded-box">
+      <fieldset class="fieldset w-xs dark:bg-black bg-white border border-base-300 p-4 rounded-box">
         <%= f.label :email, "二段階認証コード", class: "fieldset-label" %>
-        <%= f.text_field :mfa_code, class: "input" %>
-        <%= f.submit '送信', class: "btn btn-secondary" %>
+        <%= f.text_field :mfa_code, class: "input", placeholder: "Microsoft Authenticatorの認証コードを入力" %>
+        <%= f.submit '送信', class: "btn btn-primary" %>
       </fieldset>
     <% end %>
+
+    <div class="flex">
+      <%= link_to "https://apps.apple.com/jp/app/microsoft-authenticator/id983156458" do %>
+        <%= image_tag 'appstore_link.png', class: "w-auto h-12 md:w-auto md:h-auto" %>
+      <% end %>
+
+      <%= link_to "https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share" do %>
+        <%= image_tag 'googleplay_link.png', class: "w-auto h-12 md:w-auto md:h-auto" %>
+      <% end %>
+    </div>
   </div>
 </div>
