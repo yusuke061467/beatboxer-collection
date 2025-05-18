@@ -23,7 +23,7 @@ class UserSessionsController < ApplicationController
 
     def destroy
         logout
-        UserMfaSession::destroy
+        UserMfaSession.destroy
         flash[:notice] = "ログアウトしました"
         redirect_to root_path, status: :see_other
     end

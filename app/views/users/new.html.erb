@@ -1,16 +1,16 @@
-<fieldset class="fieldset w-xs bg-white border border-base-300 text-content p-4 rounded-box" id="user-form">
+<fieldset class="fieldset w-xs bg-white border border-base-300 p-4 rounded-box" id="user-form">
   <%= form_with model:@user do |f| %>
     
-    <%= f.label :name, "ユーザー名", class: "fieldset-label" %>
+    <%= f.label :name, "ユーザー名", class: "fieldset-label text-content" %>
     <%= f.text_field :name, class: "input" %>
 
-    <%= f.label :email, "メールアドレス", class: "fieldset-label" %>
+    <%= f.label :email, "メールアドレス", class: "fieldset-label text-content" %>
     <%= f.text_field :email, class: "input" %>
 
-    <%= f.label :password, "パスワード", class: "fieldset-label" %>
+    <%= f.label :password, "パスワード", class: "fieldset-label text-content" %>
     <%= f.text_field :password, class: "input" %>
 
-    <%= f.label :password_confirmation, "パスワード確認用", class: "fieldset-label" %>
+    <%= f.label :password_confirmation, "パスワード確認用", class: "fieldset-label text-content" %>
     <%= f.text_field :password_confirmation, class: "input" %>
 
     <%= f.submit "送信", class: "btn btn-neutral mt-4" %>
