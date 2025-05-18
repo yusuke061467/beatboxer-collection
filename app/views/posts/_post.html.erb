@@ -1,6 +1,5 @@
 <div class="card w-96 space-x-4 bg-base-100 shadow-sm">
   <div class="text-black card-body">
-    <span class="badge badge-xs badge-warning">Most Popular</span><!--ラベル-->
     <div>
         <% if post.youtube_video.present? %>
             <iframe class="skeleton h-50 w-full"  src="https://www.youtube.com/embed/<%= find_youtube_url(post.youtube_video) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
