@@ -9,13 +9,15 @@
         <div>
             <p class="h-15 text-3xl">🎙️</p>
         </div>
-        <div class="line-clamp-2">
-            <h2 class="h-15 text-xl font-bold" style="overflow-wrap: break-word;">
+        <div class="w-8/10 line-clamp-2">
+            <h2 class="text-xl font-bold" style="overflow-wrap: break-word;">
                 <%= post.title %>
             </h2>
         </div>
         <% if current_user %>
-            <%= render "bookmark_button", post: post %>
+            <div class="ml-4">
+                <%= render "bookmark_button", post: post %>
+            </div>
         <% end %>
     </div>
     <div class="opacity-50 gap-2 line-clamp-6">
