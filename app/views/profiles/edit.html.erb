@@ -1,6 +1,6 @@
 <%= form_with model: @user, url: profile_path, local: true do |f| %>
    <div class="flex justify-center">
-      <div class="card bg-base-100 w-140 shadow-sm items-center mt-11 mb-11 gap-5 flex flex-col">
+      <div class="card bg-white w-140 shadow-sm items-center mt-11 mb-11 gap-5 flex flex-col">
          <div class="mt-8 w-80 h-80 overflow-hidden rounded-xl">
             <%= image_tag @user.avatar_url, class: "w-80 h-80 object-cover" %>
          </div>
