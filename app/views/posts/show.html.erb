@@ -1,39 +1,43 @@
 <div class="flex justify-center mt-8 mb-8">
-<div class="card w-8/10 space-x-4 bg-white shadow-sm">
-  <div class="text-black card-body">
+    <div class="card w-96 md:w-8/10 space-x-4 bg-white shadow-sm">
+        <div class="text-black card-body">
+            <div>
+                <% if @post.youtube_video.present? %>
+                    <iframe class="skeleton h-50 md:h-150 w-full"  src="https://www.youtube.com/embed/<%= find_youtube_url(@post.youtube_video) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <% end %>
+            </div>
+            <div class="flex flex-row relative items-start w-full mt-3">
+                <div>
+                    <p class="h-15 text-3xl">🎙️</p>
+                </div>
+                <div class="w-8/10 line-clamp-2">
+                    <h2 class="text-xl font-bold" style="overflow-wrap: break-word;">
+                        <%= @post.title %>
+                    </h2>
+                </div>
+                <% if current_user %>
+                    <div class="ml-4">
+                        <%= render "posts/bookmark_button", post: @post %>
+                    </div>
+                <% end %>
+            </div>
+            <div class="opacity-50 gap-2 line-clamp-6">
+                <p class="h-30 w-full text-sm" style="overflow-wrap: break-word;"><%= @post.body %></p>
+            </div>
 
-    <div>
-        <iframe class="skeleton h-150 w-full"  src="https://www.youtube.com/embed/<%= find_youtube_url(@post.youtube_video) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+            <div>
+                <h2 class="mb-6 text-base">コメント欄</h2>
+                <div class="mb-5">
+                    <%= render "comments/form" %>
+                </div>
 
-    <div class="flex mt-5">
-        <div>
-            <p class="h-22 text-7xl">🎙️</p>
+                <div>
+                    <%= render "comments/comment" %>
+                </div>
+            </div>
+
         </div>
-        <div class="line-clamp-2 w-full">
-            <h2 class="h-22 text-4xl font-bold" style="overflow-wrap: break-word;">
-                <%= @post.title %>
-            </h2>
-        </div>
     </div>
-
-    <div class="mt-5 line-clamp-6">
-        <p class="h-30 w-full text-2xl opacity-50" style="overflow-wrap: break-word;"><%= @post.body %></p>
-    </div>
-
-    <div>
-        <h2 class="mb-6 text-lg">コメント欄</h2>
-        <div class="mb-5">
-            <%= render "comments/form" %>
-        </div>
-
-        <div>
-            <%= render "comments/comments" %>
-        </div>
-    </div>
-
-  </div>
-</div>
 </div>
 
 <%= javascript_include_tag 'packs/post/comment_render' %>
