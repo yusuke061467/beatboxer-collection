@@ -1,33 +1,42 @@
 <<<<<<< HEAD
-# README
+# BBX Hub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの概要
 
-Things you may want to cover:
+このアプリは、BeatboxのYoutube動画を共有してユーザー同士で語り合うサービスです。
+ユーザーが新たなスレッドを作成し、テーマや添付動画に基づいて感想や意見を交わします。
 
-* Ruby version
+1. **Beatboxerが利用するメリット**
+    「認知の獲得と実績豊富な経験者からのフィードバック」
+    このサービスでは、YouTubeの知名度やチャンネル登録者数といった要素に左右されず、誰でもフラットに動画が発見されます。
+    そのため、自身の動画を共有した際に、一般人やプレイヤーからの認知が広がる可能性があります。
+    また、同様のコンセプトを持つWebサービスが確認できていないことから、サービスが普及するにつれて、実績豊富なプレイヤーから質の高いフィードバックを受けられる可能性もあります。
+    これにより、自身のスキル向上や新たな視点の獲得が期待できます。
 
-* System dependencies
+2. **一般人が利用するメリット**
+    「Beatboxや音楽の聴き方が180度変わる」
+    近年、TikTokなどの動画共有プラットフォームの影響で、Beatboxという競技の認知度が急速に高まっています。
+    その中には、「Beatboxをもっと知りたい」と感じている視聴者も少なくないのではないでしょうか。
+    そうした方には、ぜひ気になった動画を投稿していただき、有識者との対話を通じてBeatboxへの理解を深めていただきたいと考えています。
+    有識者の意見を聞くことで、これまで気づかなかった視点や新たな発見が得られるはずです。
+    「プレイヤー目線」で動画を視聴することで、音の聴き方が根本的に変わり、Beatboxの面白さ・魅力が一層増してくるでしょう。
 
-* Configuration
+## 差別化ポイント
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## 技術スタック
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# beatboxer-collection
+| カテゴリー | 使用技術 |
+|---------|---------|
+| サーバーサイド | Ruby(3.2.3), Rails(7.2.2.1) |
+| フロントエンド | TailwindCSS / daisyUI |
+| データベース | PostgresSQL |
+| 開発環境 | Docker |
+| デプロイ | Render |
 
 # ER図
-![database_model_er](https://github.com/user-attachments/assets/720c1fa3-0b68-4d68-82cd-3b3ce28a9b67)
+![Image](https://github.com/user-attachments/assets/8e05b22c-e98e-4994-9cbc-037160f419c8)
 
 # 画面遷移図
 https://www.figma.com/design/yMTxgmzBvxRqnG5akoZL1B/Getting-Started-%7C-Figma-to-Studio-(Copy)?node-id=0-1&t=bjxIfiH9lCV88lPl-1
