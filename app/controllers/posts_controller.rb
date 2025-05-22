@@ -2,6 +2,17 @@ class PostsController < ApplicationController
     skip_before_action :require_login, only: [ :index ]
     skip_before_action :check_mfa, only: [ :index ]
 
+    def bookmarks
+        bookmarks = Bookmark.where(user_id: current_user.id)
+
+        if bookmarks.blank?
+            flash[:alert] = "ブックマークが登録されていません！"
+            redirect_to root_path
+        end
+
+        @bookmark_list = Post.where(id: bookmarks.pluck(:post_id)).page(params[:page]).per(12)
+    end
+
     def index
         @posts = Post.order(id: :desc).page(params[:page]).per(12)
       # binding.pry
