@@ -1,0 +1,5 @@
+<% if current_user.bookmark?(post) %>
+    <%= render "posts/bookmarks/bookmark", post: post %>
+<% else %>
+    <%= render "posts/bookmarks/unbookmark", post: post %>
+<% end %>
