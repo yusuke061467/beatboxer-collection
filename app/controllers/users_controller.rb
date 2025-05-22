@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     # binding.pry
 
     if user.save
-      flash[:notice] = "仮登録を完了しました。メールアドレスをご確認ください。"
+      flash[:notice] = "仮登録を完了しました。メールアドレスをご確認ください！"
       redirect_to root_path
     else
-      flash.now[:alert] = "仮登録に失敗しました。"
+      flash.now[:alert] = "仮登録に失敗しました！"
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,10 +23,10 @@ class UsersController < ApplicationController
   def activate
     if (user = User.load_from_activation_token(params[:id]))
       user.update(activation_state: "active")
-      flash[:notice] = "ユーザー登録が完了しました"
+      flash[:notice] = "ユーザー登録が完了しました！"
       redirect_to login_path
     else
-      flash.now[:alert] = "ユーザー登録に失敗しました。"
+      flash.now[:alert] = "ユーザー登録に失敗しました！"
       not_authenticated
     end
   end

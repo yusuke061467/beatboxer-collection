@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
     # binding.pry
 
     if save_comment.save
-      flash.now[:notice] = "コメントの投稿に成功しました。"
+      flash.now[:notice] = "コメントの投稿に成功しました！"
       render "posts/show", status: :created
     else
-      flash.now[:alert] = "コメントの投稿に失敗しました。"
+      flash.now[:alert] = "コメントの投稿に失敗しました！"
       render "posts/show", status: :unprocessable_entity
     end
   end
@@ -24,10 +24,10 @@ class CommentsController < ApplicationController
     comment_destroy = Comment.find(params[:id])
 
     if comment_destroy.destroy
-      flash.now[:notice] = "コメントの削除に成功しました。"
+      flash.now[:notice] = "コメントの削除に成功しました！"
       render "posts/show", status: :created
     else
-      flash.now[:alert] = "コメントの削除に失敗しました。"
+      flash.now[:alert] = "コメントの削除に失敗しました！"
       render "posts/show", status: :bad_request
     end
   end
