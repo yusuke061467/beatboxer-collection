@@ -9,10 +9,10 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash.now[:notice] = "ユーザーを更新しました"
+      flash.now[:notice] = "ユーザーを更新しました！"
       render :edit, status: :created
     else
-      flash.now[:alert] = "ユーザーを更新できませんでした"
+      flash.now[:alert] = "ユーザーを更新できませんでした！"
       render :edit, status: :unprocessable_entity
     end
   end

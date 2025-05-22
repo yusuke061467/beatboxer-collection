@@ -22,9 +22,10 @@ Rails.application.routes.draw do
   end
   resources :beatboxers
   resources :posts do
+    get :bookmarks, on: :collection
+    resource :bookmarks, only: %i[create destroy]
     resources :comments, only: %i[create destroy]
   end
-  resources :bookmarks, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 
   get "login", to: "user_sessions#new"
