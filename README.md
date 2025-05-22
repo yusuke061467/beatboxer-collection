@@ -1,33 +1,65 @@
 <<<<<<< HEAD
-# README
+# BBX Hub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの概要
 
-Things you may want to cover:
+このアプリは、BeatboxのYoutube動画を共有してユーザー同士で語り合うサービスです。
+ユーザーが新たなスレッドを作成し、テーマや添付動画に基づいて感想や意見を交わします。
 
-* Ruby version
+## このサービスへの思い・作りたい理由
 
-* System dependencies
+**「就職とともに消えていくBeatboxerを減らしたい」**
+私は2019年あたりまで、Beatboxシーンのプレイヤーとして活動していました。
+そういった中で、周囲では学生時代からBeatboxを始め、就職とともに競技を引退するプレイヤーを多く見てきました。
+当時では、国内大会の優勝賞金も10万円ほどで、とても職業として成り立つようなものではありませんでした。
+今でこそ、動画共有プラットフォームでBeatboxが盛り上がってきており、ある種インフルエンサーのように知名度をあげて食べていけるようになった方を見ますが、そういったチャンスを皆さんにも掴んでほしいと僕は考えています。
+なぜなら、動画共有プラットフォームでもてはやされていする世界大会出場者よりも、もっと実力のある方が沢山裏にいる事を僕は知っているからです。
+そういった方々が認知を広げていけたり、初学者であれば実力を伸ばす場であって欲しいと思います。
 
-* Configuration
+## ユーザー層について
 
-* Database creation
+1. **競技に参加しているプレイヤーや初学者**
+    今後サービスを運営する中で、「Beatboxerとして認知を広げていく」「熟練者から意見を貰う・交換する」という価値を提供できる可能性があります。
 
-* Database initialization
+2. **動画共有プラットフォームでBeatboxに関心を持つ国内ユーザー**
+    Beatboxに特化したWebサービスですので、他のサービスと比較するとユーザーの割合はBeatboxerが多くなります。
+    そういった中で、非プレイヤーと現プレイヤーが意見を交換することで、Beatboxの知見・興味をより深められる可能性があります。
 
-* How to run the test suite
+## ユーザーに提供する具体的な価値
 
-* Services (job queues, cache servers, search engines, etc.)
+1. **Beatboxerが利用するメリット**
 
-* Deployment instructions
+    **「認知の獲得と実績豊富な経験者からのフィードバック」**
+    このサービスでは、YouTubeの知名度やチャンネル登録者数といった要素に左右されず、誰でもフラットに動画が発見されます。
+    そのため、自身の動画を共有した際に、一般人やプレイヤーからの認知が広がる可能性があります。
+    また、同様のコンセプトを持つWebサービスが確認できていないことから、サービスが普及するにつれて、実績豊富なプレイヤーから質の高いフィードバックを受けられる可能性もあります。
+    これにより、自身のスキル向上や新たな視点の獲得が期待できます。
 
-* ...
+2. **一般人が利用するメリット**
 
-# beatboxer-collection
+    **「Beatboxや音楽の聴き方が180度変わる」**
+    近年、TikTokなどの動画共有プラットフォームの影響で、Beatboxという競技の認知度が急速に高まっています。
+    その中には、「Beatboxをもっと知りたい」と感じている視聴者も少なくないのではないでしょうか。
+    そうした方には、ぜひ気になった動画を投稿していただき、有識者との対話を通じてBeatboxへの理解を深めていただきたいと考えています。
+    有識者の意見を聞くことで、これまで気づかなかった視点や新たな発見が得られるはずです。
+    「プレイヤー目線」で動画を視聴することで、音の聴き方が根本的に変わり、Beatboxの面白さ・魅力が一層増してくるでしょう。
+
+## 差別化ポイント
+
+正直なところ、類似サービスが存在しない時点で差別化になると考えています。
+
+## 技術スタック
+
+| カテゴリー | 使用技術 |
+|---------|---------|
+| サーバーサイド | Ruby(3.2.3), Rails(7.2.2.1) |
+| フロントエンド | TailwindCSS / daisyUI |
+| データベース | PostgresSQL |
+| 開発環境 | Docker |
+| デプロイ | Render |
 
 # ER図
-![database_model_er](https://github.com/user-attachments/assets/720c1fa3-0b68-4d68-82cd-3b3ce28a9b67)
+![Image](https://github.com/user-attachments/assets/8e05b22c-e98e-4994-9cbc-037160f419c8)
 
 # 画面遷移図
 https://www.figma.com/design/yMTxgmzBvxRqnG5akoZL1B/Getting-Started-%7C-Figma-to-Studio-(Copy)?node-id=0-1&t=bjxIfiH9lCV88lPl-1
