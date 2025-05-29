@@ -66,5 +66,3 @@
 # ER図
 ![Image](https://github.com/user-attachments/assets/8e05b22c-e98e-4994-9cbc-037160f419c8)
 
-# 画面遷移図
-https://www.figma.com/design/yMTxgmzBvxRqnG5akoZL1B/Getting-Started-%7C-Figma-to-Studio-(Copy)?node-id=0-1&t=bjxIfiH9lCV88lPl-1
