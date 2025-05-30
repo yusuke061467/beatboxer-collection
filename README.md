@@ -64,5 +64,4 @@
 | デプロイ | Render |
 
 # ER図
-![Image](https://github.com/user-attachments/assets/8e05b22c-e98e-4994-9cbc-037160f419c8)
-
+![Image](https://github.com/user-attachments/assets/86b668b8-6d45-4911-9029-326e59a66f89)
