@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
     skip_before_action :require_login, only: [ :index ]
     skip_before_action :check_mfa, only: [ :index ]
+    before_action :set_bookmarks_data, only: [ :bookmarks, :index, :show ]
 
     def bookmarks
         bookmarks = Bookmark.where(user_id: current_user.id)
@@ -15,7 +16,6 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.order(id: :desc).page(params[:page]).per(12)
-      # binding.pry
     end
 
     def show
@@ -52,5 +52,9 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :youtube_video, :body).merge(user_id: current_user.id)
+    end
+
+    def set_bookmarks_data
+        @bookmarked_post = current_user.bookmark_posts.pluck(:id)
     end
 end
