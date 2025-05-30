@@ -1,4 +1,4 @@
-<% if current_user.bookmark?(post) %>
+<% if @bookmarked_post.include?(post.id) %>
     <%= render "posts/bookmarks/bookmark", post: post %>
 <% else %>
     <%= render "posts/bookmarks/unbookmark", post: post %>

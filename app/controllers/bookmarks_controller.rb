@@ -2,7 +2,6 @@ class BookmarksController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
 
-    # binding.pry
     respond_to do |format|
       format.turbo_stream do
         current_user.bookmark(@post)

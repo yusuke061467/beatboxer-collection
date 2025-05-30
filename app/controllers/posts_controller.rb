@@ -1,21 +1,20 @@
 class PostsController < ApplicationController
     skip_before_action :require_login, only: [ :index ]
     skip_before_action :check_mfa, only: [ :index ]
+    before_action :set_bookmarks_data, only: [ :bookmarks, :index, :show ]
 
     def bookmarks
-        bookmarks = Bookmark.where(user_id: current_user.id)
-
-        if bookmarks.blank?
+        if @bookmarked_post.blank?
             flash[:alert] = "ブックマークが登録されていません！"
             redirect_to root_path
+            return
         end
 
-        @bookmark_list = Post.where(id: bookmarks.pluck(:post_id)).page(params[:page]).per(12)
+        @bookmark_list = Post.where(id: current_user.bookmarks.pluck(:post_id)).page(params[:page]).per(12)
     end
 
     def index
         @posts = Post.order(id: :desc).page(params[:page]).per(12)
-      # binding.pry
     end
 
     def show
@@ -52,5 +51,11 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :youtube_video, :body).merge(user_id: current_user.id)
+    end
+
+    def set_bookmarks_data
+        if current_user
+            @bookmarked_post = current_user.bookmark_posts.pluck(:id)
+        end
     end
 end

@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     user.avatar = File.open(Rails.root.join("app/assets/images/default_profile_image.png"))
-    # binding.pry
 
     if user.save
       flash[:notice] = "仮登録を完了しました。メールアドレスをご確認ください！"

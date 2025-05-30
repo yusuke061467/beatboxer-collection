@@ -1,3 +1,0 @@
-class Beatboxer < ApplicationRecord
-    belongs_to :user
-end
