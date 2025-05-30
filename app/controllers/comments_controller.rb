@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :set_reloading_data
+
   def create
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new()
-    @comments = @post.comments.includes(:user).order(created_at: :desc)
-    gon.render_url = "/posts/#{params[:post_id]}"
     save_comment = @post.comments.build(comment_params)
 
     if save_comment.save
@@ -16,10 +14,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new()
-    @comments = @post.comments.includes(:user).order(created_at: :desc)
-    gon.render_url = "/posts/#{params[:post_id]}"
     comment_destroy = Comment.find(params[:id])
 
     if comment_destroy.destroy
@@ -35,5 +29,13 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body).merge(user_id: current_user.id, post_id: params[:post_id])
+  end
+
+  def set_reloading_data
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new()
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
+    @bookmarked_post = current_user.bookmark_posts.pluck(:id)
+    gon.render_url = "/posts/#{params[:post_id]}"
   end
 end
