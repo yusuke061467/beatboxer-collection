@@ -4,14 +4,13 @@ class PostsController < ApplicationController
     before_action :set_bookmarks_data, only: [ :bookmarks, :index, :show ]
 
     def bookmarks
-        bookmarks = Bookmark.where(user_id: current_user.id)
-
-        if bookmarks.blank?
+        if @bookmarked_post.blank?
             flash[:alert] = "ブックマークが登録されていません！"
             redirect_to root_path
+            return
         end
 
-        @bookmark_list = Post.where(id: bookmarks.pluck(:post_id)).page(params[:page]).per(12)
+        @bookmark_list = Post.where(id: current_user.bookmarks.pluck(:post_id)).page(params[:page]).per(12)
     end
 
     def index
@@ -55,6 +54,8 @@ class PostsController < ApplicationController
     end
 
     def set_bookmarks_data
-        @bookmarked_post = current_user.bookmark_posts.pluck(:id)
+        if current_user
+            @bookmarked_post = current_user.bookmark_posts.pluck(:id)
+        end
     end
 end
