@@ -36,9 +36,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "sorcery"
-gem "gretel"
 gem "kaminari"
-gem "ransack"
 gem "cssbundling-rails"
 gem "jsbundling-rails"
 gem "carrierwave", "~> 3.0"
