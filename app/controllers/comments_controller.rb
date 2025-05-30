@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     @comments = @post.comments.includes(:user).order(created_at: :desc)
     gon.render_url = "/posts/#{params[:post_id]}"
     save_comment = @post.comments.build(comment_params)
-    # binding.pry
 
     if save_comment.save
       flash.now[:notice] = "コメントの投稿に成功しました！"

@@ -10,21 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_05_18_022751) do
+ActiveRecord::Schema[7.2].define(version: 2025_05_30_154431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "beatboxers", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
-    t.string "country", null: false
-    t.string "style", null: false
-    t.string "achievements"
-    t.integer "sex", null: false
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_beatboxers_on_user_id"
-  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -74,11 +62,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_18_022751) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "beatboxers", "users"
   add_foreign_key "bookmarks", "posts"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "beatboxers"
   add_foreign_key "posts", "users"
 end

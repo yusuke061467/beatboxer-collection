@@ -9,7 +9,6 @@ class UserMfaSessionsController < ApplicationController
   def create
     user = current_user
     if user.google_authentic?(params[:mfa_code])
-      # binding.pry
       token = SecureRandom.hex(32)
       user.update!(mfa_session_token: token)
       UserMfaSession.create(user)
