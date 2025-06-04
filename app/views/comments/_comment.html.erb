@@ -13,7 +13,9 @@
                 <p class="text-sm text-gray-600" style="overflow-wrap: break-word;">
                     <%= comment.body %>
                 </p>
-                <%= link_to image_tag("trash_can_icon.svg", class: "mt-2 ml-2 w-auto h-5 absolute top-7 right-5"), post_comment_path(@post, comment), method: :delete, data: { turbo_method: :delete } %>
+                <% if current_user.id == comment.user.id %>
+                    <%= link_to image_tag("trash_can_icon.svg", class: "mt-2 ml-2 w-auto h-5 absolute top-7 right-5"), post_comment_path(@post, comment), method: :delete, data: { turbo_method: :delete } %>
+                <% end %>
             </div>
         </div>
     </div>
