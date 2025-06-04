@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # BBX Hub
 
 ## アプリの概要
@@ -64,4 +63,4 @@
 | デプロイ | Render |
 
 # ER図
-![Image](https://github.com/user-attachments/assets/86b668b8-6d45-4911-9029-326e59a66f89)
+![Image](https://github.com/user-attachments/assets/82f48ac6-0f55-4e18-9320-c3f8a762cdae)
